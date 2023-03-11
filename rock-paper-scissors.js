@@ -10,7 +10,7 @@ function playRound(playerSelection, computerSelection) {
         return "not a valid choice";
     }
     if (playerSelection == computerSelection) {
-        return `TIE! ${playerSelection.toUpperCase} ties with ${computerSelection.toUpperCase}`;
+        return `TIE! ${playerSelection.toUpperCase()} ties with ${computerSelection.toUpperCase()}`;
     }
     if ((playerSelection == 'rock' && computerSelection == 'scissors') || 
     (playerSelection == 'paper' && computerSelection == 'rock') ||
