@@ -8,27 +8,31 @@
                 justify-content: center;
                 gap: 30px;
             }
-            .rock, .paper, .scissors {
+            #rock, #paper, #scissors {
                 color: white;
                 width: 200px;
                 height: 200px;
+                font-size: 30px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
             }
-            .rock {
+            #rock {
                 background-color: red;
             }
-            .paper {
+            #paper {
                 background-color: blue;
             }
-            .scissors {
+            #scissors {
                 background-color: green;
             }
         </style>
     </head>
     <body>
         <div class="container">
-            <div class="rock"></div>
-            <div class="paper"></div>
-            <div class="scissors"></div>
+            <div id="rock">ROCK</div>
+            <div id="paper">PAPER</div>
+            <div id="scissors">SCISSORS</div>
         </div>
     </body>
     <script src="rock-paper-scissors.js"></script>

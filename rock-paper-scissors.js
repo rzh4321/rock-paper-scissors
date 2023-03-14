@@ -1,31 +1,34 @@
+let score = 0;
+let oppScore = 0;
+
 function getComputerChoice() {
     let index = Math.floor(Math.random() * 3);
     return ['rock','paper','scissors'][index];
 }
 
 function playRound(playerSelection, computerSelection) {
-    playerSelection = playerSelection.toLowerCase()
-    let s = new Set(['rock', 'paper', 'scissors']);
-    if (!s.has(playerSelection)) {
-        return "not a valid choice";
-    }
     if (playerSelection == computerSelection) {
-        return `TIE! ${playerSelection.toUpperCase()} ties with ${computerSelection.toUpperCase()}`;
+        console.log(`TIE! ${playerSelection.toUpperCase()} ties with ${computerSelection.toUpperCase()}`);
     }
     if ((playerSelection == 'rock' && computerSelection == 'scissors') || 
     (playerSelection == 'paper' && computerSelection == 'rock') ||
     (playerSelection == 'scissors' && computerSelection == 'paper')) {
-        return `You win! ${playerSelection.toUpperCase()} beats ${computerSelection.toUpperCase()}`;
+        ++score;
+        console.log(`You win! ${playerSelection.toUpperCase()} beats ${computerSelection.toUpperCase()}`);
     }
     else {
-        return `You lose! ${computerSelection.toUpperCase()} beats ${playerSelection.toUpperCase()}`;
+        ++oppScore;
+        console.log(`You lose! ${computerSelection.toUpperCase()} beats ${playerSelection.toUpperCase()}`);
+    }
+    if (score == 5) {
+        console.log('YOU WON THE ROUND');
+        [score, oppScore] = [0,0];
+    }
+    else if (oppScore == 5) {
+        console.log('YOU LOST THE ROUND')
+        [score, oppScore] = [0,0];
     }
 
 }
 
-function game() {
-    let playerSelection = prompt("enter rock, paper, or scissors:", 'roCk');
-    console.log(playRound(playerSelection, getComputerChoice()));
-}
 
-game();
